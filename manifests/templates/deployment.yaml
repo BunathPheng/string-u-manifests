@@ -1,0 +1,24 @@
+---
+# Source: helm for kubernetes/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: string-u
+  labels:
+    app: string-u
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: string-u
+  template:
+    metadata:
+      labels:
+        app: string-u
+    spec:
+      containers:
+        - name: string-u
+          image: docker.io/phengbunath/string-u:1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
